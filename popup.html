@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Band Info Quick Copy</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 Band Info Quick Copy</h1>
+        </header>
+        
+        <div class="section">
+            <h2>Basic Info</h2>
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="bandName">Band Name</label>
+                    <input type="text" id="bandName" placeholder="Enter your band name">
+                    <button class="copy-btn" data-field="bandName">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="website">Website</label>
+                    <input type="url" id="website" placeholder="https://yourband.com">
+                    <button class="copy-btn" data-field="website">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="contactEmail">Email</label>
+                    <input type="email" id="contactEmail" placeholder="band@email.com">
+                    <button class="copy-btn" data-field="contactEmail">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="shortBio">Short Bio</label>
+                    <textarea id="shortBio" placeholder="Brief description (1-2 sentences)"></textarea>
+                    <button class="copy-btn" data-field="shortBio">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="longBio">Long Bio</label>
+                    <textarea id="longBio" placeholder="Detailed description, history, achievements"></textarea>
+                    <button class="copy-btn" data-field="longBio">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Social & Music Links</h2>
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="instagram">Instagram</label>
+                    <input type="url" id="instagram" placeholder="https://instagram.com/yourband">
+                    <button class="copy-btn" data-field="instagram">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="facebook">Facebook</label>
+                    <input type="url" id="facebook" placeholder="https://facebook.com/yourband">
+                    <button class="copy-btn" data-field="facebook">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="youtube">YouTube</label>
+                    <input type="url" id="youtube" placeholder="https://youtube.com/@yourband">
+                    <button class="copy-btn" data-field="youtube">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="spotify">Spotify</label>
+                    <input type="url" id="spotify" placeholder="https://spotify.com/artist/yourband">
+                    <button class="copy-btn" data-field="spotify">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="soundcloud">SoundCloud</label>
+                    <input type="url" id="soundcloud" placeholder="https://soundcloud.com/yourband">
+                    <button class="copy-btn" data-field="soundcloud">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="bandcamp">Bandcamp</label>
+                    <input type="url" id="bandcamp" placeholder="https://yourband.bandcamp.com">
+                    <button class="copy-btn" data-field="bandcamp">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Media</h2>
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="song1">Song 1</label>
+                    <input type="url" id="song1" placeholder="Link to your first song">
+                    <button class="copy-btn" data-field="song1">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="song2">Song 2</label>
+                    <input type="url" id="song2" placeholder="Link to your second song">
+                    <button class="copy-btn" data-field="song2">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="youtube1">Video 1</label>
+                    <input type="url" id="youtube1" placeholder="https://youtube.com/watch?v=...">
+                    <button class="copy-btn" data-field="youtube1">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="youtube2">Video 2</label>
+                    <input type="url" id="youtube2" placeholder="https://youtube.com/watch?v=...">
+                    <button class="copy-btn" data-field="youtube2">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="photo1">Photo 1</label>
+                    <input type="url" id="photo1" placeholder="Link to band photo 1">
+                    <button class="copy-btn" data-field="photo1">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="photo2">Photo 2</label>
+                    <input type="url" id="photo2" placeholder="Link to band photo 2">
+                    <button class="copy-btn" data-field="photo2">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Additional Info</h2>
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="bookingContact">Booking</label>
+                    <input type="text" id="bookingContact" placeholder="booking@email.com or phone">
+                    <button class="copy-btn" data-field="bookingContact">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="genre">Genre</label>
+                    <input type="text" id="genre" placeholder="e.g., Rock, Pop, Jazz">
+                    <button class="copy-btn" data-field="genre">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" placeholder="e.g., United States">
+                    <button class="copy-btn" data-field="country">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="stateProvince">State/Province</label>
+                    <input type="text" id="stateProvince" placeholder="e.g., California, Ontario">
+                    <button class="copy-btn" data-field="stateProvince">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="city">City</label>
+                    <input type="text" id="city" placeholder="e.g., Los Angeles">
+                    <button class="copy-btn" data-field="city">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Other</h2>
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="other1">Other 1</label>
+                    <input type="text" id="other1" placeholder="Additional information">
+                    <button class="copy-btn" data-field="other1">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="other2">Other 2</label>
+                    <input type="text" id="other2" placeholder="Additional information">
+                    <button class="copy-btn" data-field="other2">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="other3">Other 3</label>
+                    <input type="text" id="other3" placeholder="Additional information">
+                    <button class="copy-btn" data-field="other3">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="other4">Other 4</label>
+                    <input type="text" id="other4" placeholder="Additional information">
+                    <button class="copy-btn" data-field="other4">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="other5">Other 5</label>
+                    <input type="text" id="other5" placeholder="Additional information">
+                    <button class="copy-btn" data-field="other5">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="other6">Other 6</label>
+                    <input type="text" id="other6" placeholder="Additional information">
+                    <button class="copy-btn" data-field="other6">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="other7">Other 7</label>
+                    <input type="text" id="other7" placeholder="Additional information">
+                    <button class="copy-btn" data-field="other7">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="other8">Other 8</label>
+                    <input type="text" id="other8" placeholder="Additional information">
+                    <button class="copy-btn" data-field="other8">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="other9">Other 9</label>
+                    <input type="text" id="other9" placeholder="Additional information">
+                    <button class="copy-btn" data-field="other9">Copy</button>
+                </div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-row">
+                    <label for="other10">Other 10</label>
+                    <input type="text" id="other10" placeholder="Additional information">
+                    <button class="copy-btn" data-field="other10">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="save-section">
+            <div class="save-buttons">
+                <button id="saveData" class="save-btn">💾 Save All Changes</button>
+                <button id="exportData" class="export-btn">📤 Export JSON</button>
+                <button id="importData" class="import-btn">📥 Import JSON</button>
+                <input type="file" id="importFile" accept=".json" style="display: none;">
+            </div>
+            <div id="saveStatus" class="save-status"></div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
