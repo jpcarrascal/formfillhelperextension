@@ -84,7 +84,3 @@ FormDataBrowserExtension/
 ## Support
 
 If you encounter any issues or have feature requests, please create an issue in the project repository.
-
----
-
-Built for musicians, by musicians. Rock on! 🎸
