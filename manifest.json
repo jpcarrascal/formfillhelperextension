@@ -6,7 +6,15 @@
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAndkZrRhfW3s9Yv+WUUx9jBcTDpjbTS8SyF7nHWBB/3DbgSGJXbsbNvqN6neiWJ0g60JMIS5gp5vKnH0/xiy9yzjsgEzURWi8w1XJfgE6sYZ3yI3VlUjE6JLZltFBrA7evLhJlVCnkzuNcKEIe3oexRerLQpDWLaoJtxQxZ1RduJLrFha3qAVnzI1uAbGtyB2947yFbLko59EA5VdBxChUW22f+65sCTI6OjnZ6xob0QUPnmjfZpKOCLg6k0tVahUkpgM9DKr2wkyj59ZK12+G2Y6zOtz36wlf/0MtktHWP1Jw9IgOhkEltO50Mzqr9hzVnOsnUKN+O2Xr7uu3biYcwIDAQAB",
   "permissions": [
     "storage",
-    "sidePanel"
+    "sidePanel",
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
   ],
   "background": {
     "service_worker": "background.js"

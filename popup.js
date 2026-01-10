@@ -89,17 +89,39 @@ class BandInfoManager {
             return;
         }
 
+        // Try to auto-paste into focused field on the webpage
+        let autoPasted = false;
+        try {
+            const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+            if (tab && tab.id) {
+                const response = await chrome.tabs.sendMessage(tab.id, {
+                    action: 'autoPaste',
+                    text: text
+                });
+                autoPasted = response?.success || false;
+            }
+        } catch (err) {
+            // Content script might not be loaded yet, or we're on a restricted page
+            console.log('Auto-paste not available:', err.message);
+        }
+
+        // Always copy to clipboard regardless of auto-paste success
         try {
             await navigator.clipboard.writeText(text);
-            this.showCopyFeedback(buttonElement, 'Copied!', 'success');
+            // Show different feedback based on whether auto-paste worked
+            if (autoPasted) {
+                this.showCopyFeedback(buttonElement, 'Pasted!', 'success');
+            } else {
+                this.showCopyFeedback(buttonElement, 'Copied!', 'success');
+            }
         } catch (err) {
             console.error('Failed to copy text: ', err);
             // Fallback for older browsers
-            this.fallbackCopy(text, buttonElement);
+            this.fallbackCopy(text, buttonElement, autoPasted);
         }
     }
 
-    fallbackCopy(text, buttonElement) {
+    fallbackCopy(text, buttonElement, autoPasted = false) {
         const textArea = document.createElement('textarea');
         textArea.value = text;
         textArea.style.position = 'fixed';
@@ -111,7 +133,11 @@ class BandInfoManager {
         
         try {
             document.execCommand('copy');
-            this.showCopyFeedback(buttonElement, 'Copied!', 'success');
+            if (autoPasted) {
+                this.showCopyFeedback(buttonElement, 'Pasted!', 'success');
+            } else {
+                this.showCopyFeedback(buttonElement, 'Copied!', 'success');
+            }
         } catch (err) {
             this.showCopyFeedback(buttonElement, 'Failed', 'error');
         }
