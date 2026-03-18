@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Any JSON Quick Copy</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Any JSON Quick Copy</h1>
+            <p>Import any JSON file to generate editable key/value fields.</p>
+        </header>
+
+        <div class="section">
+            <h2>Imported Fields</h2>
+            <div id="fieldsContainer" class="fields-container">
+                <div class="empty-state">No data loaded yet. Click Import JSON to begin.</div>
+            </div>
+        </div>
+
+        <div class="save-section">
+            <div class="save-buttons">
+                <button id="exportData" class="export-btn">Export JSON</button>
+                <button id="importData" class="import-btn">Import JSON</button>
+                <input type="file" id="importFile" accept=".json" style="display: none;">
+            </div>
+            <div id="saveStatus" class="save-status"></div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

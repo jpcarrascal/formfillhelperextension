@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 14px;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: none;
+    padding: 20px 20px 80px 20px;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+header h1 {
+    font-size: 16px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+header p {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #6c757d;
+}
+
+.section {
+    margin-bottom: 8px;
+    padding: 6px 8px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border-left: 3px solid #007bff;
+}
+
+.section h2 {
+    font-size: 12px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.fields-container {
+    min-height: 120px;
+}
+
+.empty-state {
+    padding: 10px;
+    font-size: 12px;
+    color: #6c757d;
+    text-align: center;
+    border: 1px dashed #ced4da;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.field-group {
+    margin-bottom: 4px;
+}
+
+.field-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.field-row label {
+    width: 180px;
+    flex-shrink: 0;
+    font-size: 11px;
+    text-align: right;
+    color: #495057;
+    font-weight: 500;
+    line-height: 1.3;
+    word-break: break-word;
+    padding-top: 6px;
+}
+
+.field-row input {
+    flex: 1;
+    padding: 6px 8px;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    font-size: 11px;
+    min-height: 28px;
+}
+
+.field-row input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 1px rgba(0, 123, 255, 0.1);
+}
+
+.copy-btn {
+    width: 52px;
+    height: 28px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 500;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.copy-btn:active {
+    transform: translateY(0);
+}
+
+.copy-btn.copied {
+    background-color: #28a745;
+    animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.save-section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 12px 8px;
+    background-color: #ffffff;
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.save-buttons {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 4px;
+}
+
+.export-btn,
+.import-btn {
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    flex: 1;
+    max-width: 140px;
+}
+
+.export-btn {
+    background-color: #007bff;
+}
+
+.import-btn {
+    background-color: #6c757d;
+}
+
+.export-btn:hover,
+.import-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.export-btn:hover {
+    background-color: #0056b3;
+}
+
+.import-btn:hover {
+    background-color: #5a6268;
+}
+
+.save-status {
+    margin-top: 4px;
+    font-size: 10px;
+    font-weight: 500;
+    min-height: 14px;
+}
+
+.save-status.success {
+    color: #28a745;
+}
+
+.save-status.error {
+    color: #dc3545;
+}
+
+.save-status.warning {
+    color: #b36b00;
+}
